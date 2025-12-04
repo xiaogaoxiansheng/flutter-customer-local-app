@@ -71,13 +71,55 @@
 【AI修改】    - `controllers/home_controller.dart` 控制器与响应式状态 `count`（lib/app/modules/home/controllers/home_controller.dart:3-22）
 【AI修改】    - `views/home_view.dart` 视图骨架（Scaffold/AppBar/Body）（lib/app/modules/home/views/home_view.dart:7-22）
 
-【AI修改】## 依赖与插件（来自 `pubspec.yaml`）
+【AI修改】## 依赖与插件（来自 `pubspec.yaml`)
 【AI修改】- 运行时依赖：
 【AI修改】  - `get: ^4.7.3` 路由/DI/响应式（GetX）
 【AI修改】  - `cupertino_icons: ^1.0.8` iOS 风格图标集
+【AI修改】  - `dio: ^5.4.0` HTTP 客户端
+【AI修改】  - `permission_handler: ^11.3.0` 运行时权限
+【AI修改】  - `flutter_screenutil: ^5.9.0` 屏幕适配
+【AI修改】  - `logger: ^2.3.0` 日志输出
+【AI修改】  - `flutter_constraintlayout: ^1.0.2` 约束布局
 【AI修改】- 开发/测试依赖：
 【AI修改】  - `flutter_test` Flutter 官方测试包
 【AI修改】  - `flutter_lints: ^5.0.0` 官方推荐代码规范检查
+
+【AI修改】## 封装方案与使用（utils/）
+【AI修改】- 日志：`lib/utils/appLogger.dart`
+【AI修改】  - 全局静态入口 `AppLogger.init()`（lib/utils/appLogger.dart:19）
+【AI修改】  - 便捷方法：`AppLogger.d/i/w/e/t(...)`（lib/utils/appLogger.dart:22-35）
+【AI修改】  - 集成位置：`main.dart` 初始化（lib/main.dart:11-14）
+【AI修改】- 网络：`lib/utils/httpClient.dart`
+【AI修改】  - 单例客户端：`HttpClient()`（lib/utils/httpClient.dart:6-8）
+【AI修改】  - 可配置基础地址/公共头：`configure(...)`（lib/utils/httpClient.dart:20-25）
+【AI修改】  - 便捷方法：`get/post/put/delete`（lib/utils/httpClient.dart:30-82）
+【AI修改】  - 内置日志拦截器 `_LogInterceptor`（lib/utils/httpClient.dart:85-106）
+【AI修改】- 权限：`lib/utils/permissionUtil.dart`
+【AI修改】  - 单个权限：`checkAndRequest(Permission)` 返回 `bool`（lib/utils/permissionUtil.dart:8-17）
+【AI修改】  - 批量权限：`requestMultiple([...])`（lib/utils/permissionUtil.dart:20-25）
+【AI修改】  - 打开设置：`openSettings()`（lib/utils/permissionUtil.dart:28）
+【AI修改】- 屏幕适配：`lib/utils/screenUtil.dart`
+【AI修改】  - 封装入口：`screenUtilInit(app: ...)`（lib/utils/screenUtil.dart:5-13）
+【AI修改】  - 集成位置：`main.dart` 通过 `runApp(screenUtilInit(...))`（lib/main.dart:16-24）
+【AI修改】- 约束布局：`flutter_constraintlayout`
+【AI修改】  - 直接使用组件即可，无需额外封装。
+
+【AI修改】### 示例用法
+【AI修改】- 初始化（`lib/main.dart`）：
+【AI修改】  - `WidgetsFlutterBinding.ensureInitialized();`（lib/main.dart:12）
+【AI修改】  - `AppLogger.init();`（lib/main.dart:13）
+【AI修改】  - `runApp(screenUtilInit(app: GetMaterialApp(...)))`（lib/main.dart:16-24）
+【AI修改】- 发起网络请求：
+【AI修改】  - `final client = HttpClient(); client.configure(baseUrl: 'https://api.example.com');`
+【AI修改】  - `final res = await client.get('/path'); AppLogger.i(res.data);`
+【AI修改】- 请求权限：
+【AI修改】  - `final ok = await PermissionUtil.checkAndRequest(Permission.camera);`
+【AI修改】  - `if (!ok) await PermissionUtil.openSettings();`
+
+【AI修改】### 平台配置注意事项
+【AI修改】- Android：在 `android/app/src/main/AndroidManifest.xml` 声明所需权限，例如 `CAMERA`、`READ_EXTERNAL_STORAGE`。
+【AI修改】- iOS：在 `ios/Runner/Info.plist` 添加用途说明键（如 `NSCameraUsageDescription`）。
+【AI修改】- Windows/macOS/Linux：仅在需要相关权限能力时添加平台支持；`permission_handler` 对部分桌面端存在能力限制。
 
 【AI修改】## 已实现功能概览
 【AI修改】- 路由与应用骨架：

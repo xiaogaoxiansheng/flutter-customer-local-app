@@ -35,6 +35,14 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   get: ^4.7.3
+  
+  # 【AI修改】网络、权限、屏幕适配、日志与约束布局依赖
+  # 【AI修改】添加 dio、permission_handler、flutter_screenutil、logger、flutter_constraintlayout
+  dio: ^5.4.0
+  permission_handler: ^11.3.0
+  flutter_screenutil: ^5.9.0
+  logger: ^2.3.0
+  flutter_constraintlayout: ^1.0.2
 
 dev_dependencies:
   flutter_test:
