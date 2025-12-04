@@ -33,5 +33,14 @@ class AppLogger {
 
   static void t(Object message, [Object? error, StackTrace? stackTrace]) =>
       _logger.t(message, error: error, stackTrace: stackTrace);
+
+  // 【AI修改】成功日志：使用 ANSI 绿色输出并带勾标记
+  static void s(Object message, [Object? error, StackTrace? stackTrace]) =>
+      _logger.log(
+        Level.info,
+        '\x1B[32m✔ $message\x1B[0m',
+        error: error,
+        stackTrace: stackTrace,
+      );
 }
 
