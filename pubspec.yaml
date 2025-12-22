@@ -36,6 +36,11 @@ dependencies:
   cupertino_icons: ^1.0.8
   get: ^4.7.3
   flutter_constraintlayout: ^1.7.0-stable
+  flutter_styled_toast: ^2.3.0
+  flutter_screenutil: ^5.9.3
+  flutter_avif: ^3.1.0
+  modal_bottom_sheet: ^3.0.0
+  permission_handler: ^11.3.0
 
 dev_dependencies:
   flutter_test:
