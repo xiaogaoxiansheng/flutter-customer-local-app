@@ -10,8 +10,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // 【AI修改】 初始化本地存储并读取登录状态
   await AuthUtils.init();
-  final loggedIn = AuthUtils.isLoggedIn();
-  final initial = loggedIn ? Routes.MAIN : Routes.LOGIN;
 
   runApp(
     ScreenUtilInit(
@@ -20,7 +18,7 @@ Future<void> main() async {
       splitScreenMode: true,
       builder: (context, child) => GetMaterialApp(
         title: "Application",
-        initialRoute: initial,
+        initialRoute: Routes.CHANGE_LANGUAGE,
         getPages: AppPages.routes,
         translations: AppTranslations(),
         locale: const Locale('zh', 'CN'),

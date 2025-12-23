@@ -1,5 +1,23 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../routes/app_pages.dart';
+import '../../../utils/auth_utils.dart';
+
 class ChangeLanguageController extends GetxController {
-  // 【AI修改】 选择语言页控制器（暂无业务逻辑）
+  final selectedLocale = const Locale('zh', 'CN').obs;
+
+  void selectChinese() => selectedLocale.value = const Locale('zh', 'CN');
+
+  void selectEnglish() => selectedLocale.value = const Locale('en', 'US');
+
+  Future<void> confirm() async {
+    Get.updateLocale(selectedLocale.value);
+    final loggedIn = AuthUtils.isLoggedIn();
+    if (loggedIn) {
+      Get.offAllNamed(Routes.MAIN);
+    } else {
+      Get.offAllNamed(Routes.LOGIN);
+    }
+  }
 }
