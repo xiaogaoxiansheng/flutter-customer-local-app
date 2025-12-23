@@ -33,13 +33,6 @@ class CustomNavbar extends StatelessWidget implements PreferredSizeWidget {
           : null,
       backgroundColor: Colors.white,
       elevation: 0,
-      bottom: PreferredSize(
-        preferredSize: const Size.fromHeight(1.0),
-        child: Container(
-          color: Colors.grey[200],
-          height: 1.0,
-        ),
-      ),
     );
   }
 
