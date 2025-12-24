@@ -16,6 +16,16 @@ class LoginStyles {
       .bodyMedium!
       .copyWith(color: primaryText.withValues(alpha: 0.9), fontSize: 24.sp);
 
+  static InputDecoration plainInputDecoration({
+    String? hint,
+  }) => InputDecoration(
+        hintText: hint,
+        isDense: true,
+        filled: false,
+        border: InputBorder.none,
+        contentPadding: EdgeInsets.symmetric(vertical: 12.h),
+      );
+
   static InputDecoration inputDecoration({
     String? hint,
     Widget? prefix,
@@ -25,7 +35,7 @@ class LoginStyles {
         filled: true,
         fillColor: fieldFill,
         isDense: true,
-        contentPadding: EdgeInsets.symmetric(horizontal: 48.w, vertical: 16.h),
+        contentPadding: EdgeInsets.symmetric(horizontal: 48.w, vertical: 12.h),
         prefixIcon: prefix == null
             ? null
             : Padding(padding: EdgeInsets.all(8.w), child: prefix),
@@ -62,7 +72,7 @@ class LoginStyles {
         backgroundColor: primaryGreen,
         foregroundColor: Colors.white,
         minimumSize: Size(double.infinity, 42.h),
-        textStyle: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
+        textStyle: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.w600),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12.r),
         ),

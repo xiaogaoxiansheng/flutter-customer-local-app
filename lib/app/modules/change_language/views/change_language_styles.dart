@@ -12,7 +12,7 @@ class ChangeLanguageStyles {
       .textTheme
       .titleLarge!
       .copyWith(
-        fontSize: 32.sp,
+        fontSize: 62.sp,
         fontWeight: FontWeight.w600,
         color: primaryText,
       );
@@ -21,12 +21,12 @@ class ChangeLanguageStyles {
       .textTheme
       .bodyMedium!
       .copyWith(
-        fontSize: 14.sp,
-        color: secondaryText,
+        fontSize: 34.sp,
+        color: primaryText,
       );
 
   static TextStyle languageLabel(bool selected) => TextStyle(
-        fontSize: 20.sp,
+        fontSize: 28.sp,
         fontWeight: FontWeight.w500,
         color: selected ? primaryGreen : primaryText,
       );

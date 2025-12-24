@@ -4,14 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class MyStyles {
   static TextStyle greeting(BuildContext context) =>
       Theme.of(context).textTheme.titleMedium!.copyWith(
-            fontSize: 22.sp,
+            fontSize: 36.sp,
             fontWeight: FontWeight.w600,
             color: const Color(0xFF222222),
           );
 
   static TextStyle welcome(BuildContext context) =>
       Theme.of(context).textTheme.bodyMedium!.copyWith(
-            fontSize: 14.sp,
+            fontSize: 28.sp,
             color: const Color(0xFF9AA0A6),
           );
 
@@ -22,25 +22,25 @@ class MyStyles {
 
   static TextStyle infoTitle(BuildContext context) =>
       Theme.of(context).textTheme.bodyMedium!.copyWith(
-            fontSize: 16.sp,
-            color: const Color(0xFF333333),
+            fontSize: 32.sp,
+            color: const Color(0xFF999999),
           );
 
   static TextStyle infoTrailing(BuildContext context) =>
       Theme.of(context).textTheme.bodySmall!.copyWith(
-            fontSize: 15.sp,
-            color: const Color(0xFF999999),
+            fontSize: 32.sp,
+            color: const Color(0xFF333333),
           );
 
   static BoxDecoration logoutButtonDecoration() => BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(8.r),
+        borderRadius: BorderRadius.circular(16.r),
         border: Border.all(color: const Color(0xFFFF4D4F)),
       );
 
   static TextStyle logoutText(BuildContext context) =>
       Theme.of(context).textTheme.bodyMedium!.copyWith(
-            fontSize: 16.sp,
+            fontSize: 32.sp,
             color: const Color(0xFFFF4D4F),
           );
 }

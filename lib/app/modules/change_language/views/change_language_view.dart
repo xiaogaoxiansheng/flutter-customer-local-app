@@ -65,7 +65,7 @@ class ChangeLanguageView extends GetView<ChangeLanguageController> {
                         left: parent.left,
                         right: parent.right,
                         top: ConstraintId('subtitle').bottom,
-                        margin: EdgeInsets.only(top: 90.h),
+                        margin: EdgeInsets.only(top: 60.h),
                       );
                     },
                   ),
@@ -131,7 +131,7 @@ class _LanguageItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 44.h,
+        height: 48.h,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8.r),

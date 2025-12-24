@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CustomNavbar extends StatelessWidget implements PreferredSizeWidget {
@@ -19,9 +20,9 @@ class CustomNavbar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       title: Text(
         title,
-        style: const TextStyle(
+        style: TextStyle(
           color: Colors.black,
-          fontSize: 18,
+          fontSize: 36.sp,
           fontWeight: FontWeight.bold,
         ),
       ),

@@ -100,36 +100,23 @@ class _UserForm extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        TextField(
+        _IconInput(
           controller: controller.usernameController,
-          decoration: LoginStyles.inputDecoration(
-            hint: 'Admin',
-            prefix: AvifImage.asset(
-              'assets/images/login_user.avif',
-              width: 16.w,
-              height: 16.w,
-              errorBuilder: (c, e, s) => const Icon(Icons.person),
-            ),
-          ),
-          textInputAction: TextInputAction.next,
-          textCapitalization: TextCapitalization.none,
+          iconAsset: 'assets/images/login_user.avif',
+          hint: 'Admin',
+          obscureText: false,
+          textInputAction:  TextInputAction.next,
+          iconSize: 40.w,
         ),
         SizedBox(height: 12.h),
         Obx(
-          () => TextField(
+          () => _IconInput(
             controller: controller.passwordController,
-            decoration: LoginStyles.inputDecoration(
-              hint: '••••••••',
-              prefix: AvifImage.asset(
-                'assets/images/login_phone.avif',
-                width: 16.w,
-                height: 16.w,
-                errorBuilder: (c, e, s) => const Icon(Icons.lock),
-              ),
-              
-            ),
+            iconAsset: 'assets/images/login_phone.avif',
+            hint: '••••••••',
             obscureText: controller.isObscure.value,
             textInputAction: TextInputAction.done,
+            iconSize: 40.w,
           ),
         ),
         SizedBox(height: 20.h),
@@ -139,6 +126,69 @@ class _UserForm extends StatelessWidget {
           child: const Text('登录'),
         ),
       ],
+    );
+  }
+}
+
+// 图标输入框
+class _IconInput extends StatelessWidget {
+  final TextEditingController controller;
+  final String iconAsset;
+  final String? hint;
+  final bool obscureText;
+  final TextInputAction textInputAction;
+  final double iconSize;
+
+  const _IconInput({
+    required this.controller,
+    required this.iconAsset,
+    this.hint,
+    required this.obscureText,
+    required this.textInputAction,
+    required this.iconSize,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 48.h,
+      decoration: BoxDecoration(
+        color: LoginStyles.fieldFill,
+        borderRadius: BorderRadius.circular(12.r),
+        border: Border.all(color: const Color(0x11000000)),
+      ),
+      child: ConstraintLayout(
+        children: [
+          AvifImage.asset(
+            iconAsset,
+            width: iconSize,
+            fit: BoxFit.contain,
+            errorBuilder: (c, e, s) => Icon(
+              Icons.image_not_supported,
+              size: iconSize,
+            ),
+          ).applyConstraint(
+            id: ConstraintId('icon'),
+            left: parent.left,
+            top: parent.top,
+            bottom: parent.bottom,
+            margin: EdgeInsets.only(left: 20.w),
+          ),
+          TextField(
+            controller: controller,
+            decoration: LoginStyles.plainInputDecoration(hint: hint),
+            obscureText: obscureText,
+            textInputAction: textInputAction,
+            textCapitalization: TextCapitalization.none,
+          ).applyConstraint(
+            id: ConstraintId('field'),
+            left: ConstraintId('icon').right,
+            top: parent.top,
+            bottom: parent.bottom,
+            margin: EdgeInsets.only(left: 12.w,top: 4.h),
+          ),
+        ],
+      ),
     );
   }
 }

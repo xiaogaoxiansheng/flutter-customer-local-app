@@ -59,6 +59,7 @@ class MyView extends GetView<MyController> {
   }
 }
 
+// 个人信息
 class _MyInfoCard extends StatelessWidget {
   const _MyInfoCard();
 
@@ -73,19 +74,18 @@ class _MyInfoCard extends StatelessWidget {
           _MyInfoItem(
             leading: AvifImage.asset(
               'assets/images/login_user.avif',
-              width: 20.w,
-              height: 20.w,
+              width: 40.w,
+              height: 40.w,
               errorBuilder: (c, e, s) => const Icon(Icons.person_outline),
             ),
             title: '账号',
             trailingText: 'Admin',
           ),
-          SizedBox(height: 12.h),
           _MyInfoItem(
             leading: AvifImage.asset(
               'assets/images/login_phone.avif',
-              width: 20.w,
-              height: 20.w,
+              width: 40.w,
+              height: 40.w,
               errorBuilder: (c, e, s) => const Icon(Icons.phone_iphone),
             ),
             title: '手机号',
@@ -95,20 +95,19 @@ class _MyInfoCard extends StatelessWidget {
           _MyInfoItem(
             leading: AvifImage.asset(
               'assets/images/my_info.avif',
-              width: 20.w,
-              height: 20.w,
+              width: 40.w,
+              height: 40.w,
               errorBuilder: (c, e, s) =>
                   const Icon(Icons.report_problem_outlined),
             ),
             title: '故障上报',
             showArrow: true,
           ),
-          SizedBox(height: 12.h),
           _MyInfoItem(
             leading: AvifImage.asset(
               'assets/images/my_key.avif',
-              width: 20.w,
-              height: 20.w,
+              width: 40.w,
+              height: 40.w,
               errorBuilder: (c, e, s) => const Icon(Icons.vpn_key_outlined),
             ),
             title: '修改密码',
@@ -141,8 +140,8 @@ class _MyInfoItem extends StatelessWidget {
         children: [
           SizedBox(width: 16.w),
           SizedBox(
-            width: 20.w,
-            height: 20.w,
+            width: 40.w,
+            height: 40.w,
             child: leading,
           ),
           SizedBox(width: 12.w),
@@ -159,7 +158,7 @@ class _MyInfoItem extends StatelessWidget {
           if (showArrow)
             Icon(
               Icons.chevron_right,
-              size: 18.w,
+              size: 38.w,
               color: const Color(0xFFCCCCCC),
             ),
           SizedBox(width: 16.w),
@@ -169,13 +168,14 @@ class _MyInfoItem extends StatelessWidget {
   }
 }
 
+// 退出登录按钮
 class _LogoutButton extends StatelessWidget {
   const _LogoutButton();
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 40.w),
+      margin: EdgeInsets.symmetric(horizontal: 190.w),
       height: 48.h,
       decoration: MyStyles.logoutButtonDecoration(),
       alignment: Alignment.center,
