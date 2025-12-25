@@ -3,16 +3,18 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   Routes._();
-  static const MAIN = _Paths.MAIN;
-  static const LOGIN = _Paths.LOGIN;
-  static const HOME = _Paths.HOME;
-   static const CHANGE_LANGUAGE = _Paths.CHANGE_LANGUAGE;
+  static const main = _Paths.main;
+  static const login = _Paths.login;
+  static const home = _Paths.home;
+  static const changeLanguage = _Paths.changeLanguage;
+  static const gallery = _Paths.gallery;
 }
 
 abstract class _Paths {
   _Paths._();
-  static const MAIN = '/main';
-  static const LOGIN = '/login';
-  static const HOME = '/home';
-   static const CHANGE_LANGUAGE = '/change-language';
+  static const main = '/main';
+  static const login = '/login';
+  static const home = '/home';
+  static const changeLanguage = '/change-language';
+  static const gallery = '/gallery';
 }

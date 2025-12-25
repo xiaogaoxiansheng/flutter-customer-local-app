@@ -33,6 +33,7 @@ class CustomNavbar extends StatelessWidget implements PreferredSizeWidget {
             )
           : null,
       backgroundColor: Colors.white,
+      surfaceTintColor: Colors.transparent,
       elevation: 0,
     );
   }

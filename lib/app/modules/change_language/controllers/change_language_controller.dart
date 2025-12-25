@@ -15,9 +15,9 @@ class ChangeLanguageController extends GetxController {
     Get.updateLocale(selectedLocale.value);
     final loggedIn = AuthUtils.isLoggedIn();
     if (loggedIn) {
-      Get.offAllNamed(Routes.MAIN);
+      Get.offAllNamed(Routes.main);
     } else {
-      Get.offAllNamed(Routes.LOGIN);
+      Get.offAllNamed(Routes.login);
     }
   }
 }

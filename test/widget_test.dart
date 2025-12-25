@@ -17,7 +17,7 @@ void main() {
     await tester.pumpWidget(
       GetMaterialApp(
         title: 'Application',
-        initialRoute: AppPages.INITIAL,
+        initialRoute: Routes.home,
         getPages: AppPages.routes,
       ),
     );

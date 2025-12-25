@@ -21,7 +21,7 @@ class LoginController extends GetxController {
       return;
     }
     await AuthUtils.setLoggedIn(true);
-    Get.offAllNamed(Routes.MAIN);
+    Get.offAllNamed(Routes.main);
   }
 
   @override
