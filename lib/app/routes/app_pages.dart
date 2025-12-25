@@ -10,6 +10,8 @@ import '../modules/change_language/bindings/change_language_binding.dart';
 import '../modules/change_language/views/change_language_view.dart';
 import '../modules/gallery/bindings/gallery_binding.dart';
 import '../modules/gallery/views/gallery_view.dart';
+import '../modules/modifyPassword/bindings/modify_password_binding.dart';
+import '../modules/modifyPassword/views/modify_password_view.dart';
 
 part 'app_routes.dart';
 
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.gallery,
       page: () => const GalleryView(),
       binding: GalleryBinding(),
+    ),
+    GetPage(
+      name: _Paths.modifyPassword,
+      page: () => const ModifyPasswordView(),
+      binding: ModifyPasswordBinding(),
     ),
   ];
 }

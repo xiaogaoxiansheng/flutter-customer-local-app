@@ -13,7 +13,7 @@ class RegisterView extends GetView<RegisterController> {
         title: const Text('Register'),
         centerTitle: true,
       ),
-      // 【AI修改】 注册页占位视图
+      //注册页占位视图
       body: const Center(
         child: Text('Register Page'),
       ),

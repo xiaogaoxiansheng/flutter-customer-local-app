@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 import './my_styles.dart';
 import '../../../global_widgets/custom_navbar.dart';
+import '../../../routes/app_pages.dart';
 import '../controllers/my_controller.dart';
 
 class MyView extends GetView<MyController> {
@@ -112,6 +113,7 @@ class _MyInfoCard extends StatelessWidget {
             ),
             title: '修改密码',
             showArrow: true,
+            onTap: () => Get.toNamed(Routes.modifyPassword),
           ),
         ],
       ),
@@ -124,45 +126,50 @@ class _MyInfoItem extends StatelessWidget {
   final String title;
   final String? trailingText;
   final bool showArrow;
+  final VoidCallback? onTap;
 
   const _MyInfoItem({
     required this.leading,
     required this.title,
     this.trailingText,
     this.showArrow = false,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 52.h,
-      child: Row(
-        children: [
-          SizedBox(width: 16.w),
-          SizedBox(
-            width: 40.w,
-            height: 40.w,
-            child: leading,
-          ),
-          SizedBox(width: 12.w),
-          Text(
-            title,
-            style: MyStyles.infoTitle(context),
-          ),
-          const Spacer(),
-          if (trailingText != null)
+      child: InkWell(
+        onTap: onTap,
+        child: Row(
+          children: [
+            SizedBox(width: 16.w),
+            SizedBox(
+              width: 40.w,
+              height: 40.w,
+              child: leading,
+            ),
+            SizedBox(width: 12.w),
             Text(
-              trailingText!,
-              style: MyStyles.infoTrailing(context),
+              title,
+              style: MyStyles.infoTitle(context),
             ),
-          if (showArrow)
-            Icon(
-              Icons.chevron_right,
-              size: 38.w,
-              color: const Color(0xFFCCCCCC),
-            ),
-          SizedBox(width: 16.w),
-        ],
+            const Spacer(),
+            if (trailingText != null)
+              Text(
+                trailingText!,
+                style: MyStyles.infoTrailing(context),
+              ),
+            if (showArrow)
+              Icon(
+                Icons.chevron_right,
+                size: 38.w,
+                color: const Color(0xFFCCCCCC),
+              ),
+            SizedBox(width: 16.w),
+          ],
+        ),
       ),
     );
   }

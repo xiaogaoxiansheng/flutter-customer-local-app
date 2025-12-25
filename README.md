@@ -1,6 +1,6 @@
 # flutter_customer_local_app
 
-【AI修改】以下为本项目的开发与运行环境版本说明（含最低/最高支持）：
+以下为本项目的开发与运行环境版本说明（含最低/最高支持）：
 
 ## 开发环境
 - 操作系统：Windows 11 24H2 及以上（开发验证环境）
@@ -51,44 +51,44 @@
   - `flutter clean` 后重试；
   - 检查并修复 `android/local.properties` 的 `flutter.sdk` 路径。
 
-【AI修改】以上信息会随依赖升级而调整，请以 `flutter doctor -v` 与项目 `android` 目录下的 Gradle/Kotlin/AGP 配置为准。
+以上信息会随依赖升级而调整，请以 `flutter doctor -v` 与项目 `android` 目录下的 Gradle/Kotlin/AGP 配置为准。
 
-【AI修改】## 项目目录结构
-【AI修改】- 顶层目录：
-【AI修改】  - `lib/` 应用源码（入口与路由、模块化代码）
-【AI修改】  - `android/`、`ios/`、`macos/`、`linux/`、`windows/` 平台工程
-【AI修改】  - `web/` Web 构建资源（`index.html`、PWA `manifest.json` 等）
-【AI修改】  - `test/` 单元/组件测试样例（`widget_test.dart`）
-【AI修改】  - `pubspec.yaml` 依赖与资源声明
-【AI修改】  - `analysis_options.yaml` Dart/Flutter Lints 配置
-【AI修改】- `lib/` 关键结构：
-【AI修改】  - `lib/main.dart` 应用入口，使用 `GetMaterialApp` 进行路由注册（lib/main.dart:7-14）
-【AI修改】  - `lib/app/routes/` 路由定义：
-【AI修改】    - `app_pages.dart` 声明 `AppPages.routes` 与初始路由（lib/app/routes/app_pages.dart:11-19）
-【AI修改】    - `app_routes.dart` 路径常量（lib/app/routes/app_routes.dart:4-12）
-【AI修改】  - `lib/app/modules/home/` Home 模块：
-【AI修改】    - `bindings/home_binding.dart` 依赖注入（Get.lazyPut）（lib/app/modules/home/bindings/home_binding.dart:5-11）
-【AI修改】    - `controllers/home_controller.dart` 控制器与响应式状态 `count`（lib/app/modules/home/controllers/home_controller.dart:3-22）
-【AI修改】    - `views/home_view.dart` 视图骨架（Scaffold/AppBar/Body）（lib/app/modules/home/views/home_view.dart:7-22）
+## 项目目录结构
+- 顶层目录：
+  - `lib/` 应用源码（入口与路由、模块化代码）
+  - `android/`、`ios/`、`macos/`、`linux/`、`windows/` 平台工程
+  - `web/` Web 构建资源（`index.html`、PWA `manifest.json` 等）
+  - `test/` 单元/组件测试样例（`widget_test.dart`）
+  - `pubspec.yaml` 依赖与资源声明
+  - `analysis_options.yaml` Dart/Flutter Lints 配置
+- `lib/` 关键结构：
+  - `lib/main.dart` 应用入口，使用 `GetMaterialApp` 进行路由注册（lib/main.dart:7-14）
+  - `lib/app/routes/` 路由定义：
+    - `app_pages.dart` 声明 `AppPages.routes` 与初始路由（lib/app/routes/app_pages.dart:11-19）
+    - `app_routes.dart` 路径常量（lib/app/routes/app_routes.dart:4-12）
+  - `lib/app/modules/home/` Home 模块：
+    - `bindings/home_binding.dart` 依赖注入（Get.lazyPut）（lib/app/modules/home/bindings/home_binding.dart:5-11）
+    - `controllers/home_controller.dart` 控制器与响应式状态 `count`（lib/app/modules/home/controllers/home_controller.dart:3-22）
+    - `views/home_view.dart` 视图骨架（Scaffold/AppBar/Body）（lib/app/modules/home/views/home_view.dart:7-22）
 
-【AI修改】## 依赖与插件（来自 `pubspec.yaml`）
-【AI修改】- 运行时依赖：
-【AI修改】  - `get: ^4.7.3` 路由/DI/响应式（GetX）
-【AI修改】  - `cupertino_icons: ^1.0.8` iOS 风格图标集
-【AI修改】- 开发/测试依赖：
-【AI修改】  - `flutter_test` Flutter 官方测试包
-【AI修改】  - `flutter_lints: ^5.0.0` 官方推荐代码规范检查
+## 依赖与插件（来自 `pubspec.yaml`）
+- 运行时依赖：
+  - `get: ^4.7.3` 路由/DI/响应式（GetX）
+  - `cupertino_icons: ^1.0.8` iOS 风格图标集
+- 开发/测试依赖：
+  - `flutter_test` Flutter 官方测试包
+  - `flutter_lints: ^5.0.0` 官方推荐代码规范检查
 
-【AI修改】## 已实现功能概览
-【AI修改】- 路由与应用骨架：
-【AI修改】  - 使用 `GetMaterialApp` 注册页面与初始路由（`Routes.HOME`）（lib/main.dart:7-14）
-【AI修改】  - 路由表采用 `GetPage` 进行页面与绑定关联（lib/app/routes/app_pages.dart:13-19）
-【AI修改】- 模块化结构（Home 模块）：
-【AI修改】  - 绑定层：通过 `HomeBinding` 懒加载控制器实例（lib/app/modules/home/bindings/home_binding.dart:5-11）
-【AI修改】  - 控制器层：提供响应式计数 `count` 与 `increment` 方法（lib/app/modules/home/controllers/home_controller.dart:6,22）
-【AI修改】  - 视图层：基础页面框架与占位文案（lib/app/modules/home/views/home_view.dart:11-22）
-【AI修改】- 多平台工程：已生成 Android/iOS/Web/Windows/macOS/Linux 工程骨架，可直接运行与构建（各平台对应目录）
-【AI修改】- 测试与规范：包含示例组件测试 `test/widget_test.dart` 与 lints 配置
+## 已实现功能概览
+- 路由与应用骨架：
+  - 使用 `GetMaterialApp` 注册页面与初始路由（`Routes.HOME`）（lib/main.dart:7-14）
+  - 路由表采用 `GetPage` 进行页面与绑定关联（lib/app/routes/app_pages.dart:13-19）
+- 模块化结构（Home 模块）：
+  - 绑定层：通过 `HomeBinding` 懒加载控制器实例（lib/app/modules/home/bindings/home_binding.dart:5-11）
+  - 控制器层：提供响应式计数 `count` 与 `increment` 方法（lib/app/modules/home/controllers/home_controller.dart:6,22）
+  - 视图层：基础页面框架与占位文案（lib/app/modules/home/views/home_view.dart:11-22）
+- 多平台工程：已生成 Android/iOS/Web/Windows/macOS/Linux 工程骨架，可直接运行与构建（各平台对应目录）
+- 测试与规范：包含示例组件测试 `test/widget_test.dart` 与 lints 配置
 
 A new Flutter project.
 

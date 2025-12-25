@@ -8,6 +8,7 @@ abstract class Routes {
   static const home = _Paths.home;
   static const changeLanguage = _Paths.changeLanguage;
   static const gallery = _Paths.gallery;
+  static const modifyPassword = _Paths.modifyPassword;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const home = '/home';
   static const changeLanguage = '/change-language';
   static const gallery = '/gallery';
+  static const modifyPassword = '/modify-password';
 }

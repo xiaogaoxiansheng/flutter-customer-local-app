@@ -8,7 +8,7 @@ import 'app/utils/auth_utils.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // 【AI修改】 初始化本地存储并读取登录状态
+  //初始化本地存储并读取登录状态
   await AuthUtils.init();
 
   runApp(
@@ -18,7 +18,7 @@ Future<void> main() async {
       splitScreenMode: true,
       builder: (context, child) => GetMaterialApp(
         title: "Application",
-        initialRoute: Routes.gallery,
+        initialRoute: Routes.modifyPassword,
         getPages: AppPages.routes,
         translations: AppTranslations(),
         locale: const Locale('zh', 'CN'),

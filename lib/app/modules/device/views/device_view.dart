@@ -13,7 +13,7 @@ class DeviceView extends GetView<DeviceController> {
         title: const Text('Device'),
         centerTitle: true,
       ),
-      // 【AI修改】 设备列表页占位视图
+      //设备列表页占位视图
       body: const Center(
         child: Text('Device Page'),
       ),

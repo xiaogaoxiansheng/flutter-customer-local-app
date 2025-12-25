@@ -67,7 +67,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # 【AI修改】 项目静态资源目录声明
+  #项目静态资源目录声明
   assets:
     - assets/
     - assets/images/
