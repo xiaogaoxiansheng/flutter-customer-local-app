@@ -3,7 +3,6 @@ import 'package:flutter_constraintlayout/flutter_constraintlayout.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:marquee/marquee.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 
 import '../../../global_widgets/custom_navbar.dart';
 import '../controllers/device_controller.dart';
