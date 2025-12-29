@@ -65,6 +65,7 @@ class HomeController extends GetxController {
 
   /// 下拉刷新入口
   /// 对外提供刷新方法，内部复用首次加载逻辑
+  @override
   Future<void> refresh() => _loadInitial();
 
   /// 首次加载列表数据

@@ -4,7 +4,6 @@ import 'package:flutter_constraintlayout/flutter_constraintlayout.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../global_widgets/custom_navbar.dart';
 import '../controllers/home_controller.dart';
 import './home_styles.dart';
 
@@ -383,7 +382,7 @@ class _GranaryCardHeader extends StatelessWidget {
             // 轻微蒙层，保证文字对比度
             Positioned.fill(
               child: Container(
-                color: Colors.black.withOpacity(0.02),
+                color: Colors.black.withValues(alpha: 0.02),
               ),
             ),
             // 左侧标题与更新时间文案

@@ -10,6 +10,8 @@ import '../modules/change_language/bindings/change_language_binding.dart';
 import '../modules/change_language/views/change_language_view.dart';
 import '../modules/gallery/bindings/gallery_binding.dart';
 import '../modules/gallery/views/gallery_view.dart';
+import '../modules/device_details/bindings/device_details_binding.dart';
+import '../modules/device_details/views/device_details_view.dart';
 import '../modules/modifyPassword/bindings/modify_password_binding.dart';
 import '../modules/modifyPassword/views/modify_password_view.dart';
 
@@ -40,6 +42,11 @@ class AppPages {
       name: _Paths.home,
       page: () => const HomeView(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.deviceDetails,
+      page: () => const DeviceDetailsView(),
+      binding: DeviceDetailsBinding(),
     ),
     GetPage(
       name: _Paths.gallery,

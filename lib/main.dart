@@ -18,7 +18,7 @@ Future<void> main() async {
       splitScreenMode: true,
       builder: (context, child) => GetMaterialApp(
         title: "Application",
-        initialRoute: Routes.main,
+        initialRoute: Routes.deviceDetails,
         getPages: AppPages.routes,
         translations: AppTranslations(),
         locale: const Locale('zh', 'CN'),

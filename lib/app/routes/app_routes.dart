@@ -6,6 +6,7 @@ abstract class Routes {
   static const main = _Paths.main;
   static const login = _Paths.login;
   static const home = _Paths.home;
+  static const deviceDetails = _Paths.deviceDetails;
   static const changeLanguage = _Paths.changeLanguage;
   static const gallery = _Paths.gallery;
   static const modifyPassword = _Paths.modifyPassword;
@@ -16,6 +17,7 @@ abstract class _Paths {
   static const main = '/main';
   static const login = '/login';
   static const home = '/home';
+  static const deviceDetails = '/device-details';
   static const changeLanguage = '/change-language';
   static const gallery = '/gallery';
   static const modifyPassword = '/modify-password';

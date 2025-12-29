@@ -101,7 +101,7 @@ class HomeStyles {
   static Widget summaryDivider() => Container(
         width: 1.w,
         height: 72.h,
-        color: borderLight.withOpacity(0.6),
+        color: borderLight.withValues(alpha: 0.6),
         margin: EdgeInsets.symmetric(horizontal: 24.w),
       );
 
